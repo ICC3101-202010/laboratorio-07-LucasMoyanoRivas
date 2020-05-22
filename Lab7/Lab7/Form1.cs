@@ -14,25 +14,40 @@ namespace Lab7
     {
         Double valor = 0;
         String operacion = "";
+        String ans = "";
         bool operacion_botonpresionado = false;
         public Form1()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
         private void button_Click(object sender, EventArgs e)
         {
-            if (Resultado.Text == "0" || operacion_botonpresionado) 
+            if ((Resultado.Text == "0") || (operacion_botonpresionado))
             {
                 Resultado.Clear();
             }
             operacion_botonpresionado = false;
             Button boton =(Button)sender;
-            Resultado.Text = Resultado.Text + boton.Text;
+            if(boton.Text == ",")
+            {
+                if(!Resultado.Text.Contains(","))
+                {
+                    Resultado.Text = Resultado.Text + boton.Text;
+                }
+            }
+            else
+            {
+                if(boton.Text == "Ans")
+                {
+                    Resultado.Text = Resultado.Text + ans;
+                }
+                else
+                {
+                    Resultado.Text = Resultado.Text + boton.Text;
+                    
+                }
+            }
+
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -45,26 +60,37 @@ namespace Lab7
             Button boton = (Button)sender;
             operacion = boton.Text;
             valor = Double.Parse(Resultado.Text);
-            operacion_botonpresionado = true;
             ecuacion.Text = valor + " " + operacion;
+            operacion_botonpresionado = true;
         }
         private void button18_Click(object sender, EventArgs e)
         {
             
             ecuacion.Text = "";
-            switch(operacion)
+            switch (operacion)
             {
                 case "+":
                     Resultado.Text = (valor + Double.Parse(Resultado.Text)).ToString();
+                    ans = Resultado.Text;
                     break;
                 case "-":
                     Resultado.Text = (valor - Double.Parse(Resultado.Text)).ToString();
+                    ans = Resultado.Text;
                     break;
                 case "x":
                     Resultado.Text = (valor * Double.Parse(Resultado.Text)).ToString();
+                    ans = Resultado.Text;
                     break;
                 case "/":
-                    Resultado.Text = (valor / Double.Parse(Resultado.Text)).ToString();
+                    if(Double.Parse(Resultado.Text) == 0)
+                    {
+                        Resultado.Text = "Math ERROR";
+                    }
+                    else
+                    {
+                        Resultado.Text = (valor / Double.Parse(Resultado.Text)).ToString();
+                        ans = Resultado.Text;
+                    }
                     break;
                 default:
                     break;
