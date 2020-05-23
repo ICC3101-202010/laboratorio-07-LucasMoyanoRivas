@@ -49,6 +49,13 @@
             this.Resultado = new System.Windows.Forms.TextBox();
             this.ecuacion = new System.Windows.Forms.Label();
             this.Ans = new System.Windows.Forms.Button();
+            this.Historial1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HistorialText2 = new System.Windows.Forms.TextBox();
+            this.BorrarHistorial = new System.Windows.Forms.Button();
+            this.SalirHistorial = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.Historial1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -281,11 +288,75 @@
             this.Ans.UseVisualStyleBackColor = true;
             this.Ans.Click += new System.EventHandler(this.button_Click);
             // 
+            // Historial1
+            // 
+            this.Historial1.Controls.Add(this.SalirHistorial);
+            this.Historial1.Controls.Add(this.BorrarHistorial);
+            this.Historial1.Controls.Add(this.HistorialText2);
+            this.Historial1.Controls.Add(this.textBox1);
+            this.Historial1.Location = new System.Drawing.Point(8, 21);
+            this.Historial1.Name = "Historial1";
+            this.Historial1.Size = new System.Drawing.Size(278, 325);
+            this.Historial1.TabIndex = 21;
+            this.Historial1.Visible = false;
+            this.Historial1.Click += new System.EventHandler(this.Historial);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(6, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 31);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Historial";
+            // 
+            // HistorialText2
+            // 
+            this.HistorialText2.Location = new System.Drawing.Point(6, 51);
+            this.HistorialText2.Multiline = true;
+            this.HistorialText2.Name = "HistorialText2";
+            this.HistorialText2.Size = new System.Drawing.Size(268, 121);
+            this.HistorialText2.TabIndex = 1;
+            this.HistorialText2.Click += new System.EventHandler(this.Historial);
+            // 
+            // BorrarHistorial
+            // 
+            this.BorrarHistorial.Location = new System.Drawing.Point(71, 178);
+            this.BorrarHistorial.Name = "BorrarHistorial";
+            this.BorrarHistorial.Size = new System.Drawing.Size(122, 24);
+            this.BorrarHistorial.TabIndex = 2;
+            this.BorrarHistorial.Text = "Borrar Historial";
+            this.BorrarHistorial.UseVisualStyleBackColor = true;
+            this.BorrarHistorial.Click += new System.EventHandler(this.Historial);
+            // 
+            // SalirHistorial
+            // 
+            this.SalirHistorial.Location = new System.Drawing.Point(71, 219);
+            this.SalirHistorial.Name = "SalirHistorial";
+            this.SalirHistorial.Size = new System.Drawing.Size(122, 24);
+            this.SalirHistorial.TabIndex = 3;
+            this.SalirHistorial.Text = "Salir Historial";
+            this.SalirHistorial.UseVisualStyleBackColor = true;
+            this.SalirHistorial.Click += new System.EventHandler(this.Historial);
+            // 
+            // button21
+            // 
+            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.Location = new System.Drawing.Point(12, 89);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(96, 24);
+            this.button21.TabIndex = 22;
+            this.button21.Text = "Historial";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.Historial);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 358);
+            this.Controls.Add(this.button21);
+            this.Controls.Add(this.Historial1);
             this.Controls.Add(this.Ans);
             this.Controls.Add(this.ecuacion);
             this.Controls.Add(this.Resultado);
@@ -314,6 +385,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora";
+            this.Historial1.ResumeLayout(false);
+            this.Historial1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -342,6 +415,12 @@
         private System.Windows.Forms.TextBox Resultado;
         private System.Windows.Forms.Label ecuacion;
         private System.Windows.Forms.Button Ans;
+        private System.Windows.Forms.Panel Historial1;
+        private System.Windows.Forms.Button SalirHistorial;
+        private System.Windows.Forms.Button BorrarHistorial;
+        private System.Windows.Forms.TextBox HistorialText2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button21;
     }
 }
 

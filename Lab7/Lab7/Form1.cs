@@ -15,6 +15,7 @@ namespace Lab7
         Double valor = 0;
         String operacion = "";
         String ans = "";
+        String historialtexto = "";
         bool operacion_botonpresionado = false;
         public Form1()
         {
@@ -72,14 +73,17 @@ namespace Lab7
                 case "+":
                     Resultado.Text = (valor + Double.Parse(Resultado.Text)).ToString();
                     ans = Resultado.Text;
+                    historialtexto += valor.ToString() + " + " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text + " \n ";
                     break;
                 case "-":
                     Resultado.Text = (valor - Double.Parse(Resultado.Text)).ToString();
                     ans = Resultado.Text;
+                    historialtexto += valor.ToString() + " - " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text + " \n ";
                     break;
                 case "x":
                     Resultado.Text = (valor * Double.Parse(Resultado.Text)).ToString();
                     ans = Resultado.Text;
+                    historialtexto += valor.ToString() + " x " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text +  " \n ";
                     break;
                 case "/":
                     if(Double.Parse(Resultado.Text) == 0)
@@ -90,6 +94,7 @@ namespace Lab7
                     {
                         Resultado.Text = (valor / Double.Parse(Resultado.Text)).ToString();
                         ans = Resultado.Text;
+                        historialtexto += valor.ToString() + " / " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text + " \n ";
                     }
                     break;
                 default:
@@ -101,6 +106,25 @@ namespace Lab7
         {
             Resultado.Text = "0";
             valor = 0;
+        }
+
+        private void Historial(object sender, EventArgs e)
+        {
+            Button boton = (Button)sender;
+            if(boton.Text == "Historial")
+            {
+                Historial1.Show();
+                HistorialText2.Text = historialtexto;
+            }
+            if (boton.Text == "Salir Historial")
+            {
+                Historial1.Hide();
+            }
+            if (boton.Text == "Borrar Historial")
+            {
+                HistorialText2.Text = "";
+                historialtexto = "";
+            }
         }
     }
 }
