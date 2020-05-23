@@ -50,10 +50,10 @@
             this.ecuacion = new System.Windows.Forms.Label();
             this.Ans = new System.Windows.Forms.Button();
             this.Historial1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.HistorialText2 = new System.Windows.Forms.TextBox();
-            this.BorrarHistorial = new System.Windows.Forms.Button();
             this.SalirHistorial = new System.Windows.Forms.Button();
+            this.BorrarHistorial = new System.Windows.Forms.Button();
+            this.HistorialText2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button21 = new System.Windows.Forms.Button();
             this.Historial1.SuspendLayout();
             this.SuspendLayout();
@@ -294,30 +294,22 @@
             this.Historial1.Controls.Add(this.BorrarHistorial);
             this.Historial1.Controls.Add(this.HistorialText2);
             this.Historial1.Controls.Add(this.textBox1);
-            this.Historial1.Location = new System.Drawing.Point(8, 21);
+            this.Historial1.Location = new System.Drawing.Point(8, 20);
             this.Historial1.Name = "Historial1";
             this.Historial1.Size = new System.Drawing.Size(278, 325);
             this.Historial1.TabIndex = 21;
             this.Historial1.Visible = false;
             this.Historial1.Click += new System.EventHandler(this.Historial);
             // 
-            // textBox1
+            // SalirHistorial
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(6, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 31);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Historial";
-            // 
-            // HistorialText2
-            // 
-            this.HistorialText2.Location = new System.Drawing.Point(6, 51);
-            this.HistorialText2.Multiline = true;
-            this.HistorialText2.Name = "HistorialText2";
-            this.HistorialText2.Size = new System.Drawing.Size(268, 121);
-            this.HistorialText2.TabIndex = 1;
-            this.HistorialText2.Click += new System.EventHandler(this.Historial);
+            this.SalirHistorial.Location = new System.Drawing.Point(71, 219);
+            this.SalirHistorial.Name = "SalirHistorial";
+            this.SalirHistorial.Size = new System.Drawing.Size(122, 24);
+            this.SalirHistorial.TabIndex = 3;
+            this.SalirHistorial.Text = "Salir Historial";
+            this.SalirHistorial.UseVisualStyleBackColor = true;
+            this.SalirHistorial.Click += new System.EventHandler(this.Historial);
             // 
             // BorrarHistorial
             // 
@@ -329,15 +321,23 @@
             this.BorrarHistorial.UseVisualStyleBackColor = true;
             this.BorrarHistorial.Click += new System.EventHandler(this.Historial);
             // 
-            // SalirHistorial
+            // HistorialText2
             // 
-            this.SalirHistorial.Location = new System.Drawing.Point(71, 219);
-            this.SalirHistorial.Name = "SalirHistorial";
-            this.SalirHistorial.Size = new System.Drawing.Size(122, 24);
-            this.SalirHistorial.TabIndex = 3;
-            this.SalirHistorial.Text = "Salir Historial";
-            this.SalirHistorial.UseVisualStyleBackColor = true;
-            this.SalirHistorial.Click += new System.EventHandler(this.Historial);
+            this.HistorialText2.Location = new System.Drawing.Point(6, 51);
+            this.HistorialText2.Multiline = true;
+            this.HistorialText2.Name = "HistorialText2";
+            this.HistorialText2.Size = new System.Drawing.Size(268, 121);
+            this.HistorialText2.TabIndex = 1;
+            this.HistorialText2.Click += new System.EventHandler(this.Historial);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(6, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 31);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Historial";
             // 
             // button21
             // 
@@ -355,7 +355,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 358);
-            this.Controls.Add(this.button21);
             this.Controls.Add(this.Historial1);
             this.Controls.Add(this.Ans);
             this.Controls.Add(this.ecuacion);
@@ -378,6 +377,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button21);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(318, 397);
             this.MinimumSize = new System.Drawing.Size(318, 397);

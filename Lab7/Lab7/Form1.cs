@@ -29,28 +29,16 @@ namespace Lab7
             }
             operacion_botonpresionado = false;
             Button boton =(Button)sender;
-            if(boton.Text == ",")
+            if(boton.Text == "Ans")
             {
-                if(!Resultado.Text.Contains(","))
-                {
-                    Resultado.Text = Resultado.Text + boton.Text;
-                }
+                Resultado.Text = Resultado.Text + ans;
             }
             else
             {
-                if(boton.Text == "Ans")
-                {
-                    Resultado.Text = Resultado.Text + ans;
-                }
-                else
-                {
-                    Resultado.Text = Resultado.Text + boton.Text;
+                Resultado.Text = Resultado.Text + boton.Text;
                     
-                }
             }
-
         }
-
         private void button16_Click(object sender, EventArgs e)
         {
             Resultado.Text = "0";
@@ -60,41 +48,83 @@ namespace Lab7
         {
             Button boton = (Button)sender;
             operacion = boton.Text;
-            valor = Double.Parse(Resultado.Text);
-            ecuacion.Text = valor + " " + operacion;
-            operacion_botonpresionado = true;
+            try
+            {
+                valor = Double.Parse(Resultado.Text);
+                ecuacion.Text = valor + " " + operacion;
+                operacion_botonpresionado = true;
+            }
+            catch
+            {
+                Resultado.Text = "Syntax Error";
+            }
+            
         }
         private void button18_Click(object sender, EventArgs e)
         {
-            
+            string historial22 = "";
             ecuacion.Text = "";
             switch (operacion)
             {
                 case "+":
-                    Resultado.Text = (valor + Double.Parse(Resultado.Text)).ToString();
-                    ans = Resultado.Text;
-                    historialtexto += valor.ToString() + " + " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text + " \n ";
+                    try
+                    {
+                        historial22 = Double.Parse(Resultado.Text).ToString();
+                        Resultado.Text = (valor + Double.Parse(Resultado.Text)).ToString();
+                        ans = Resultado.Text;
+                        historialtexto += valor.ToString() + " + " + historial22 + " = " + Resultado.Text + " \n ";
+                    }
+                    catch
+                    {
+                        Resultado.Text = "Syntax ERROR";
+                    }
+                    
                     break;
                 case "-":
-                    Resultado.Text = (valor - Double.Parse(Resultado.Text)).ToString();
-                    ans = Resultado.Text;
-                    historialtexto += valor.ToString() + " - " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text + " \n ";
+                    try
+                    {
+                        historial22 = Double.Parse(Resultado.Text).ToString();
+                        Resultado.Text = (valor - Double.Parse(Resultado.Text)).ToString();
+                        ans = Resultado.Text;
+                        historialtexto += valor.ToString() + " - " + historial22 + " = " + Resultado.Text + " \n ";
+                    }
+                    catch
+                    {
+                        Resultado.Text = "Syntax ERROR";
+                    }
                     break;
                 case "x":
-                    Resultado.Text = (valor * Double.Parse(Resultado.Text)).ToString();
-                    ans = Resultado.Text;
-                    historialtexto += valor.ToString() + " x " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text +  " \n ";
-                    break;
-                case "/":
-                    if(Double.Parse(Resultado.Text) == 0)
-                    {
-                        Resultado.Text = "Math ERROR";
-                    }
-                    else
-                    {
-                        Resultado.Text = (valor / Double.Parse(Resultado.Text)).ToString();
+                   try
+                   {
+                        historial22 = Double.Parse(Resultado.Text).ToString();
+                        Resultado.Text = (valor * Double.Parse(Resultado.Text)).ToString();
                         ans = Resultado.Text;
-                        historialtexto += valor.ToString() + " / " + Double.Parse(Resultado.Text).ToString() + " = " + Resultado.Text + " \n ";
+                        historialtexto += valor.ToString() + " x " + historial22 + " = " + Resultado.Text + " \n ";
+                   }
+                   catch
+                   {
+                        Resultado.Text = "Syntax ERROR";
+                   }
+                   break;
+                case "/":
+                    try
+                    {
+                        if (Double.Parse(Resultado.Text) == 0)
+                        {
+                            Resultado.Text = "Math ERROR";
+                        }
+                        else
+                        {
+                            historial22 = Double.Parse(Resultado.Text).ToString();
+                            Resultado.Text = (valor / Double.Parse(Resultado.Text)).ToString();
+                            ans = Resultado.Text;
+                            historialtexto += valor.ToString() + " / " + historial22 + " = " + Resultado.Text + " \n ";
+
+                        }
+                    }
+                    catch
+                    {
+                        Resultado.Text = "Syntax ERROR";
                     }
                     break;
                 default:
